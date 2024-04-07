@@ -257,3 +257,32 @@ progress {
   font-size: inherit;
   padding: 0.8rem;
 }
+
+@media only screen and (max-width: 380px) {
+  body {
+    width: 240px;
+    padding: 60px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .app-header {
+    width: 50%;
+  }
+  .main {
+    width: 50%;
+  }
+  .options {
+    width: full;
+  }
+  .btn-option {
+    font-size: 1.25rem;
+  }
+  .progress {
+    font-size: 1.25rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+}
