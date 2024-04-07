@@ -8,3 +8,5 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 - You can check --->  https://react-quiz-mastery.netlify.app/
+
+<img width="1792" alt="Screenshot 2024-04-07 at 20 17 02" src="https://github.com/ahmettavsan/react-quiz-app/assets/107367185/9bfcc88a-9942-400d-8f09-c968bff3bac8">
