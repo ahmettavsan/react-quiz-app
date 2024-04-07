@@ -14,7 +14,6 @@ function reducer(state, action) {
       };
 
     case "newAnswer":
-      console.log(action, state);
       return {
         ...state,
         answer: action.payload,
