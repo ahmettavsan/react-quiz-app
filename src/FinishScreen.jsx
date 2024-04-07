@@ -23,7 +23,7 @@ export default function Finish({
         className="btn btn-ui"
         onClick={() => dispatch({ type: "restart" })}
       >
-        Restart{" "}
+        Restart
       </button>
     </>
   );

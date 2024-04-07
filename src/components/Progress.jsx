@@ -7,12 +7,14 @@ export default function Progress({
 }) {
   return (
     <header className="progress">
-      <progress value={index + Number(answer)} max={numQuestion} />
+      <progress max={numQuestion} value={index + Number(answer !== null)} />
+
       <p>
-        Question <strong> {index + 1} </strong> / {numQuestion}
+        Question <strong>{index + 1}</strong> / {numQuestion}
       </p>
+
       <p>
-        <strong>{points} </strong> / {maxPossiblePoint}
+        <strong>{points}</strong> / {maxPossiblePoint}
       </p>
     </header>
   );

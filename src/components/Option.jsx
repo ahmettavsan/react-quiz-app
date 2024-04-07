@@ -1,16 +1,19 @@
 export default function Option({ dispatch, question, answer }) {
+  const hasAnswered = answer !== null;
   return (
     <div className="options">
-      {question.options.map((option, i) => (
+      {question.options.map((option, index) => (
         <button
-          key={i}
-          className={`btn btn-option  ${
-            answer && i === answer ? "answer" : ""
-          } ${
-            answer ? (i === question.correctOption ? "correct" : "wrong") : ""
+          className={`btn btn-option ${index === answer ? "answer" : ""} ${
+            hasAnswered
+              ? index === question.correctOption
+                ? "correct"
+                : "wrong"
+              : ""
           }`}
-          disabled={answer}
-          onClick={() => dispatch({ type: "newAnswer", payload: i })}
+          key={option}
+          disabled={hasAnswered}
+          onClick={() => dispatch({ type: "newAnswer", payload: index })}
         >
           {option}
         </button>

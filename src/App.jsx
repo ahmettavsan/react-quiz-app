@@ -10,7 +10,6 @@ import Progress from "./components/Progress";
 import Finish from "./FinishScreen";
 
 import Footer from "./components/Footer";
-import Timer from "./components/Timer";
 
 const SECS_PER_QUESTION = 30;
 
@@ -28,13 +27,13 @@ function reducer(state, action) {
       };
 
     case "newAnswer":
-      const question = state.questions.at(state.index);
+      console.log(action, state);
       return {
         ...state,
         answer: action.payload,
         points:
-          question.correctOption === action.payload
-            ? state.points + question.points
+          state.questions.at(state.index).correctOption === action.payload
+            ? state.points + state.questions.at(state.index).points
             : state.points,
       };
     case "nextQuestion":
@@ -56,7 +55,7 @@ function reducer(state, action) {
     case "restart":
       return {
         ...initialState,
-        question: state.questions,
+        questions: state.questions,
         status: "ready",
       };
 
@@ -115,14 +114,13 @@ export default function App() {
           </>
         )}
         <Footer>
-          <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />
-          {answer && status !== "finish" && (
-            <NextButton
-              dispatch={dispatch}
-              index={index}
-              numQuestions={numQuestions}
-            />
-          )}
+          <NextButton
+          status={status}
+            answer={answer}
+            dispatch={dispatch}
+            index={index}
+            numQuestions={numQuestions}
+          />
         </Footer>
         {status === "finish" && (
           <Finish
